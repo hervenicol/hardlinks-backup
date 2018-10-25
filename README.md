@@ -35,3 +35,6 @@ http://www.mikerubel.org/computers/rsync_snapshots/
 
 Don't forget checks for dir [ -d xxx ] before trying to overwrite / cp / mv ...
 
+
+## Sanity checks
+Semaphore: [![Build Status](https://semaphoreci.com/api/v1/hervenicol/hardlinks-backup/branches/master/badge.svg)](https://semaphoreci.com/hervenicol/hardlinks-backup)
