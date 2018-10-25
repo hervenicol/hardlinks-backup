@@ -1,3 +1,4 @@
+#!/bin/bash
 
 mount_flag_basename=/tmp/mount_flag
 my_mount_flag_filename=$mount_flag_basename.$$
@@ -11,7 +12,7 @@ function set_mount_flag
 
 function is_mount_flag_set
 {
-	if $(ls /tmp/mount_flag* >/dev/null 2>&1); then
+	if ls /tmp/mount_flag* >/dev/null 2>&1; then
 #		echo "Mount flag is set"
 		return 0
 	fi

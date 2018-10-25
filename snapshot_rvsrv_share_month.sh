@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# shellcheck source=backup_lib.sh
 . "$(dirname "$0")"/backup_lib.sh
 
 backup_name=/media/backup_disk/backup_rvsrv/share
