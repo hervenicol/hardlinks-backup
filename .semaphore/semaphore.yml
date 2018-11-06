@@ -1,0 +1,24 @@
+version: v1.0
+name: Hardlinks-backup code checks
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: "Code analysis"
+    task:
+      jobs:
+      - name: shellcheck
+        commands:
+          - checkout
+          - echo "Run shellcheck"
+          - docker pull koalaman/shellcheck
+          - find . -name \*.sh | xargs docker run -t --rm -v $(pwd):/mnt koalaman/shellcheck
+
+      - name: bashate
+        commands:
+          - checkout
+          - echo "Run bashate"
+          - sudo pip install bashate
+          - find . -name \*.sh | xargs bashate
